@@ -1,0 +1,6 @@
+require 'rspec'
+require 'json'
+require './api/booking'
+require './api/authorise'
+require './payloads/booking_payload'
+require './payloads/authorise_payload'

@@ -60,7 +60,7 @@ describe('Restful-booker') do
     auth_response = Authorise.post_credentials(auth_payload.toJson)
 
     delete_response = Booking.delete_booking(JSON.parse(created_response.body)["bookingid"].to_i, JSON.parse(auth_response.body)["token"])
-    
+
     expect(delete_response.code).to be(201)
   end
 

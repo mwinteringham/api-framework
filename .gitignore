@@ -3,3 +3,5 @@
 *.pyo
 .DS_Store
 node_modules
+*.iml
+target

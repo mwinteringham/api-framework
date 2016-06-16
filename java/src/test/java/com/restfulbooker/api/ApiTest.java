@@ -1,11 +1,11 @@
-package com.beyondchecks.api;
+package com.restfulbooker.api;
 
-import com.beyondchecks.api.api.Auth;
-import com.beyondchecks.api.api.Booking;
-import com.beyondchecks.api.payloads.request.AuthPayload;
-import com.beyondchecks.api.payloads.request.BookingPayload;
-import com.beyondchecks.api.payloads.response.AuthResponse;
-import com.beyondchecks.api.payloads.response.BookingResponse;
+import com.restfulbooker.api.api.Auth;
+import com.restfulbooker.api.api.Booking;
+import com.restfulbooker.api.payloads.request.AuthPayload;
+import com.restfulbooker.api.payloads.request.BookingPayload;
+import com.restfulbooker.api.payloads.response.AuthResponse;
+import com.restfulbooker.api.payloads.response.BookingResponse;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

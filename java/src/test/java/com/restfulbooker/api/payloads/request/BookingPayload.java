@@ -1,4 +1,4 @@
-package com.beyondchecks.api.payloads.request;
+package com.restfulbooker.api.payloads.request;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;

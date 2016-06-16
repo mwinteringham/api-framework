@@ -1,7 +1,7 @@
-package com.beyondchecks.api.api;
+package com.restfulbooker.api.api;
 
-import com.beyondchecks.api.payloads.request.BookingPayload;
-import com.beyondchecks.api.payloads.response.BookingResponse;
+import com.restfulbooker.api.payloads.request.BookingPayload;
+import com.restfulbooker.api.payloads.response.BookingResponse;
 import org.springframework.http.*;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;

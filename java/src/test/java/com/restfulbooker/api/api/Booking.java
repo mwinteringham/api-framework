@@ -6,7 +6,7 @@ import org.springframework.http.*;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 public class Booking {
 
@@ -19,7 +19,7 @@ public class Booking {
 
     public static ResponseEntity<String> getBooking(int id, MediaType accept) throws HttpClientErrorException {
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.setAccept(Arrays.asList(accept));
+        requestHeaders.setAccept(Collections.singletonList(accept));
 
         HttpEntity<String> httpEntity = new HttpEntity<String>(requestHeaders);
 
@@ -29,7 +29,7 @@ public class Booking {
     public static ResponseEntity<BookingResponse> postBooking(BookingPayload payload) {
         HttpHeaders requestHeaders = new HttpHeaders();
         requestHeaders.setContentType(MediaType.APPLICATION_JSON);
-        requestHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 
         HttpEntity<BookingPayload> httpEntity = new HttpEntity<BookingPayload>(payload, requestHeaders);
 

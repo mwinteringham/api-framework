@@ -8,7 +8,6 @@ import org.springframework.web.client.RestTemplate;
 public class Auth {
 
     private static RestTemplate restTemplate = new RestTemplate();
-    private static String baseUrl = "http://localhost:3001";
 
     public static ResponseEntity<AuthResponse> postAuth(AuthPayload payload){
         HttpHeaders requestHeaders = new HttpHeaders();
@@ -16,6 +15,6 @@ public class Auth {
 
         HttpEntity<AuthPayload> httpEntity = new HttpEntity<AuthPayload>(payload, requestHeaders);
 
-        return restTemplate.exchange(baseUrl + "/auth", HttpMethod.POST, httpEntity, AuthResponse.class);
+        return restTemplate.exchange("http://localhost:3001/auth", HttpMethod.POST, httpEntity, AuthResponse.class);
     }
 }

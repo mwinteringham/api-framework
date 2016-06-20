@@ -36,10 +36,11 @@ public class ApiTest {
     @Test
     public void getBookingIdWithBadAcceptShouldReturn418(){
         try{
-            ResponseEntity<String> response = Booking.getBooking(1, MediaType.TEXT_PLAIN);
-            assertNotEquals(response.getStatusCode(), is(HttpStatus.OK));
+            Booking.getBooking(1, MediaType.TEXT_PLAIN);
+
+            fail("HttpClientError not thrown");
         } catch (HttpClientErrorException e){
-            assertThat(e.getRawStatusCode(), is(418));
+            assertThat(e.getStatusCode(), is(HttpStatus.I_AM_A_TEAPOT));
         }
     }
 

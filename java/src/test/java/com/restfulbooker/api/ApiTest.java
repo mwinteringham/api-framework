@@ -58,7 +58,7 @@ public class ApiTest {
 
         ResponseEntity<BookingResponse> response = Booking.postBooking(payload);
 
-        assertEquals(response.getStatusCode(), HttpStatus.OK);
+        assertThat(response.getStatusCode(), is(HttpStatus.OK));
     }
 
     @Test
@@ -86,7 +86,7 @@ public class ApiTest {
                 createdBookingResponse.getBody().getBookingid(),
                 authResponse.getBody().getToken());
 
-        assertEquals(deleteResponse.getStatusCode(), HttpStatus.CREATED);
+        assertThat(deleteResponse.getStatusCode(), is(HttpStatus.CREATED));
     }
 
 }

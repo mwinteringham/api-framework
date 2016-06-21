@@ -1,11 +1,9 @@
 package com.restfulbooker.api.payloads.request;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.Date;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingDatesPayload {
 
     @JsonProperty

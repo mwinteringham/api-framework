@@ -1,7 +1,4 @@
-var request        = require('supertest-as-promised'),
-    expect         = require('chai').expect,
-    should         = require('chai').should(),
-    Booking        = require('../api/booking'),
+var Booking        = require('../api/booking'),
     Authorise      = require('../api/authorise'),
     BookingPayload = require('../payloads/booking_payload'),
     AuthPayload    = require('../payloads/auth_payload');

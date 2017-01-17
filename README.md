@@ -1,6 +1,6 @@
 # api-framework
 
-A group of templated API test frameworks based upon this series:  http://www.mwtestconsultancy.co.uk/category/api-web-service-testing/ The frameworks all have the same structure that is based upon the tutorial series I wrote last year on [how to build an automated API test framework](http://www.mwtestconsultancy.co.uk/build-automated-api-test-framework/).  The key to these templates is to demonstrate a way of structuring your API test framework regardless of what tools or languages that are used and is loosely based upon the principles of Page object architecture used for WebDriver.  The idea being that the structure will increase readability, reduce maintenance and prevent brittle tests from appearing.  
+The frameworks all have the same structure that is based upon the tutorial series I wrote last year on [how to build an automated API test framework](http://www.mwtestconsultancy.co.uk/build-automated-api-test-framework/).  The key to these templates is to demonstrate a way of structuring your API test framework regardless of what tools or languages that are used and is loosely based upon the principles of Page object architecture used for WebDriver.  The idea being that the structure will increase readability, reduce maintenance and prevent brittle tests from appearing.  
 
 The framework contains three areas:
 

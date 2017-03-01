@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthPayload.cs" />
+    <Compile Include="AuthResponsePayload.cs" />
     <Compile Include="BookingDatesPayload.cs" />
     <Compile Include="BookingPayload.cs" />
     <Compile Include="BookingResponsePayload.cs" />

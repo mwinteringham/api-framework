@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Payloads
+﻿namespace Payloads
 {
     public class BookingPayload
     {
@@ -85,10 +79,14 @@ namespace Payloads
             this.additionalneeds = additionalneeds;
         }
 
-        public BookingPayload build()
+        public BookingPayload()
         {
-            BookingDatesPayload bookingDates = new BookingDatesPayload(checkin, checkout);
-            return new BookingPayload(firstname, lastname, totalprice, depositpaid, bookingDates, additionalneeds);
         }
+
+        //public BookingPayload build()
+        //{
+        //    BookingDatesPayload bookingDates = new BookingDatesPayload(checkin, checkout);
+        //    return new BookingPayload(firstname, lastname, totalprice, depositpaid, bookingDates, additionalneeds);
+        //}
     }
    }

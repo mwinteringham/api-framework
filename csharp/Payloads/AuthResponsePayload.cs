@@ -2,12 +2,7 @@
 {
     public class AuthResponsePayload
     {
-        private string token;
-
-        public string getToken()
-        {
-            return token;
-        }
+        public string token { get; private set; }
 
         public void setToken(string token)
         {

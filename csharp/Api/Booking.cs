@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
+using System.Web;
 
 namespace Api
 {
@@ -33,15 +34,14 @@ namespace Api
                 }
 
             }
-            catch (HttpRequestException e)
+            catch (HttpException e)
             {
-                Console.WriteLine("Exception caught: " + e);
-                return null;
+                throw e;
             }
 
         }
 
-        public static BookingResponsePayload postBooking(BookingPayload payload)
+        public static HttpResponseMessage postBooking(BookingPayload payload)
         {
             try
             {
@@ -50,11 +50,9 @@ namespace Api
                 using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri(bookingUrl), Method = HttpMethod.Post })
                 {
                     request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                    request.Headers.Add("Content-Type", "application/json");
+                    //request.Headers.Add("Content-Type", "application/json");
                     request.Headers.Add("Accept", "application/json");
-                    var response = httpClient.SendAsync(request).Result;
-                    var responseString = response.Content.ReadAsStringAsync().Result;
-                    return JsonConvert.DeserializeObject<BookingResponsePayload>(responseString);
+                    return httpClient.SendAsync(request).Result;
                 }
 
             }

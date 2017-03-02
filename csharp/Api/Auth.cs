@@ -18,7 +18,6 @@ namespace Api
                 using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri("http://localhost:3001/auth"), Method = HttpMethod.Post })
                 {
                     request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                    request.Headers.Add("Content-Type", "application/json");
                     var response = httpClient.SendAsync(request).Result;
                     var responseString = response.Content.ReadAsStringAsync().Result;
                     return JsonConvert.DeserializeObject<AuthResponsePayload>(responseString);
@@ -31,26 +30,6 @@ namespace Api
                 return null;
             }
 
-        }
-
-        public static HttpResponseMessage deleteBooking(int id, string tokenValue)
-        {
-            try
-            {
-                var bookingUrl = baseUrl + "/booking/" + id.ToString();
-
-                using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri(bookingUrl), Method = HttpMethod.Delete })
-                {
-                    request.Headers.Add("Cookie", "token=" + tokenValue);
-                    return httpClient.SendAsync(request).Result;
-                }
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception caught: " + e);
-                return null;
-            }
         }
     }
 }

@@ -4,23 +4,13 @@ namespace Payloads
 {
     public class BookingDatesPayload
     {
-        private DateTime checkin { get; set; }
-        private DateTime checkout { get; set; }
+        public  DateTime checkin { get; private set; }
+        public  DateTime checkout { get; private set; }
 
         public BookingDatesPayload(DateTime checkin, DateTime checkout)
         {
             this.checkin = checkin;
             this.checkout = checkout;
-        }
-
-        public DateTime getCheckin()
-        {
-            return checkin;
-        }
-
-        public DateTime getCheckout()
-        {
-            return checkout;
         }
     }
 }

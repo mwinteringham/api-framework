@@ -2,8 +2,8 @@
 {
     public class AuthPayload
     {
-        private string username;
-        private string password;
+        public string username { get; private set; }
+        public string password { get; private set; }
 
         private AuthPayload(string username, string password)
         {
@@ -15,15 +15,6 @@
         {
         }
 
-        public string getUsername()
-        {
-            return username;
-        }
-
-        public string getPassword()
-        {
-            return password;
-        }
 
         public void setUsername(string username)
         {

@@ -11,3 +11,5 @@ C:\Users\hrobb\Source\Repos\api-framework\csharp\Tests\bin\Debug\Microsoft.Visua
 C:\Users\hrobb\Source\Repos\api-framework\csharp\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Users\hrobb\Source\Repos\api-framework\csharp\Tests\obj\Debug\Tests.dll
 C:\Users\hrobb\Source\Repos\api-framework\csharp\Tests\obj\Debug\Tests.pdb
+C:\Users\hrobb\Source\Repos\api-framework\csharp\Tests\bin\Debug\nunit.framework.dll
+C:\Users\hrobb\Source\Repos\api-framework\csharp\Tests\bin\Debug\nunit.framework.xml

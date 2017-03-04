@@ -13,25 +13,25 @@ namespace Tests
     public class BookingTestsMsTest
     {
         [TestMethod]
-        public void getBookingShouldReturn200()
+        public void GetBookingShouldReturn200()
         {
-            var response = Booking.getBookings();
+            var response = Booking.GetBookings();
             Assert.IsTrue(response.IsSuccessStatusCode, "Status Code is not 200");
         }
 
         [TestMethod]
-        public void getBookingIdShouldReturn200()
+        public void GetBookingIdShouldReturn200()
         {
-            var response = Booking.getBooking(1,new MediaTypeHeaderValue("application/json"));
+            var response = Booking.GetBooking(1,new MediaTypeHeaderValue("application/json"));
             Assert.IsTrue(response.IsSuccessStatusCode, "Status Code is not 200");
         }
 
         [TestMethod]
-        public void getBookingIdWithBadAcceptShouldReturn418()
+        public void GetBookingIdWithBadAcceptShouldReturn418()
         {
             try
             {
-                Booking.getBooking(1, new MediaTypeHeaderValue("text/plain"));
+                Booking.GetBooking(1, new MediaTypeHeaderValue("text/plain"));
                 Assert.Fail("HttpException not thrown");
             }
             catch (HttpException e)
@@ -41,42 +41,42 @@ namespace Tests
         }
 
         [TestMethod]
-        public void postBookingReturns200()
+        public void PostBookingReturns200()
         {
             BookingPayload payload = new BookingPayload();
-            payload.setFirstname("Mary");
-            payload.setLastname("White");
-            payload.setTotalprice(200);
-            payload.setDepositpaid(true);
-            payload.setBookingdates(new BookingDatesPayload(new DateTime(2017, 3, 31), new DateTime(2017, 4, 3)));
-            payload.setAdditionalneeds("None");
+            payload.SetFirstname("Mary");
+            payload.SetLastname("White");
+            payload.SetTotalPrice(200);
+            payload.SetDepositPaid(true);
+            payload.SetBookingDates(new BookingDatesPayload(new DateTime(2017, 3, 31), new DateTime(2017, 4, 3)));
+            payload.SetAdditionalNeeds("None");
 
-            var response = Booking.postBooking(payload);
+            var response = Booking.PostBooking(payload);
             Assert.IsTrue(response.IsSuccessStatusCode, "Status Code is not 200");
         }
 
         [TestMethod]
-        public void deleteBookingReturns201()
+        public void DeleteBookingReturns201()
         {
             BookingPayload payload = new BookingPayload();
-            payload.setFirstname("Mary");
-            payload.setLastname("White");
-            payload.setTotalprice(200);
-            payload.setDepositpaid(true);
-            payload.setBookingdates(new BookingDatesPayload(new DateTime(2017, 3, 31), new DateTime(2017, 4, 3)));
-            payload.setAdditionalneeds("None");
+            payload.SetFirstname("Mary");
+            payload.SetLastname("White");
+            payload.SetTotalPrice(200);
+            payload.SetDepositPaid(true);
+            payload.SetBookingDates(new BookingDatesPayload(new DateTime(2017, 3, 31), new DateTime(2017, 4, 3)));
+            payload.SetAdditionalNeeds("None");
 
-            var response = Booking.postBooking(payload);
+            var response = Booking.PostBooking(payload);
             string responsePayload = response.Content.ReadAsStringAsync().Result;
             BookingResponsePayload bookingResponse = JsonConvert.DeserializeObject<BookingResponsePayload>(responsePayload);
 
             AuthPayload authPayload = new AuthPayload();
-            authPayload.setUsername("admin");
-            authPayload.setPassword("password123");
+            authPayload.SetUsername("admin");
+            authPayload.SetPassword("password123");
 
-            AuthResponsePayload authResponse = Auth.postAuth(authPayload);
+            AuthResponsePayload authResponse = Auth.PostAuth(authPayload);
 
-            var deleteResponse = Booking.deleteBooking(bookingResponse.bookingid, authResponse.token);
+            var deleteResponse = Booking.DeleteBooking(bookingResponse.BookingId, authResponse.Token);
 
             Assert.IsTrue(deleteResponse.StatusCode == HttpStatusCode.Created, "Http Status Code is not 201");
         }

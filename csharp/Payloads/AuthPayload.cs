@@ -2,13 +2,13 @@
 {
     public class AuthPayload
     {
-        public string username { get; private set; }
-        public string password { get; private set; }
+        public string Username { get; private set; }
+        public string Password { get; private set; }
 
         private AuthPayload(string username, string password)
         {
-            this.username = username;
-            this.password = password;
+            Username = username;
+            Password = password;
         }
 
         public AuthPayload()
@@ -16,15 +16,15 @@
         }
 
 
-        public void setUsername(string username)
+        public void SetUsername(string username)
         {
-            this.username = username;
+            Username = username;
         }
 
-        public void setPassword(string password)
+        public void SetPassword(string password)
         {
-            this.password = password;
+            Password = password;
         }
-        
-        }
+
+    }
 }

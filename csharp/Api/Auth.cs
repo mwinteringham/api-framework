@@ -8,9 +8,9 @@ namespace Api
 {
     public class Auth
     {
-        private static HttpClient httpClient = new HttpClient();
+        private static HttpClient _httpClient = new HttpClient();
  
-        public static AuthResponsePayload postAuth(AuthPayload payload)
+        public static AuthResponsePayload PostAuth(AuthPayload payload)
         {
             try
             {              
@@ -18,7 +18,7 @@ namespace Api
                 using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri("http://localhost:3001/auth"), Method = HttpMethod.Post })
                 {
                     request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                    var response = httpClient.SendAsync(request).Result;
+                    var response = _httpClient.SendAsync(request).Result;
                     var responseString = response.Content.ReadAsStringAsync().Result;
                     return JsonConvert.DeserializeObject<AuthResponsePayload>(responseString);
                 }

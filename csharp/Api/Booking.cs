@@ -10,27 +10,27 @@ namespace Api
 {
     public class Booking
     {
-        private static HttpClient httpClient = new HttpClient();
-        private static string baseUrl = "http://localhost:3001";
+        private static HttpClient _httpClient = new HttpClient();
+        private static string _baseUrl = "http://localhost:3001";
 
-        public static HttpResponseMessage getBookings()
+        public static HttpResponseMessage GetBookings()
         {
-            var bookingUrl = baseUrl + "/booking/";
+            var bookingUrl = _baseUrl + "/booking/";
             using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri(bookingUrl), Method = HttpMethod.Get })
             {
-                return httpClient.SendAsync(request).Result;
+                return _httpClient.SendAsync(request).Result;
             }
         }
 
-        public static HttpResponseMessage getBooking(int id, MediaTypeHeaderValue accept)
+        public static HttpResponseMessage GetBooking(int id, MediaTypeHeaderValue accept)
         {
             try
             {
-                var bookingUrl = baseUrl + "/booking/" + id.ToString();
+                var bookingUrl = _baseUrl + "/booking/" + id.ToString();
                 using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri(bookingUrl), Method = HttpMethod.Get })
                 {
                     request.Headers.Accept.Equals(accept);
-                    return httpClient.SendAsync(request).Result;
+                    return _httpClient.SendAsync(request).Result;
                 }
 
             }
@@ -41,18 +41,18 @@ namespace Api
 
         }
 
-        public static HttpResponseMessage postBooking(BookingPayload payload)
+        public static HttpResponseMessage PostBooking(BookingPayload payload)
         {
             try
             {
-                var bookingUrl = baseUrl + "/booking/";
+                var bookingUrl = _baseUrl + "/booking/";
                 string requestBody = JsonConvert.SerializeObject(payload);
                 using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri(bookingUrl), Method = HttpMethod.Post })
                 {
                     request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
                     //request.Headers.Add("Content-Type", "application/json");
                     request.Headers.Add("Accept", "application/json");
-                    return httpClient.SendAsync(request).Result;
+                    return _httpClient.SendAsync(request).Result;
                 }
 
             }
@@ -64,16 +64,16 @@ namespace Api
 
         }
 
-        public static HttpResponseMessage deleteBooking(int id, string tokenValue)
+        public static HttpResponseMessage DeleteBooking(int id, string tokenValue)
         {
             try
             {
-                var bookingUrl = baseUrl + "/booking/" + id.ToString();
+                var bookingUrl = _baseUrl + "/booking/" + id.ToString();
 
                 using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri(bookingUrl), Method = HttpMethod.Delete })
                 {
                     request.Headers.Add("Cookie", "token=" + tokenValue);
-                    return httpClient.SendAsync(request).Result;
+                    return _httpClient.SendAsync(request).Result;
                 }
 
             }

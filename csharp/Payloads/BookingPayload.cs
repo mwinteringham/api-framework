@@ -2,61 +2,56 @@
 {
     public class BookingPayload
     {
-        public string firstname { get; private set; }
-        public string lastname { get; private set; }
-        public int totalprice { get; private set; }
-        public bool depositpaid { get; private set; }
-        public BookingDatesPayload bookingdates { get; private set; }
-        public string additionalneeds { get; private set; }
+        public string Firstname { get; private set; }
+        public string Lastname { get; private set; }
+        public int TotalPrice { get; private set; }
+        public bool DepositPaid { get; private set; }
+        public BookingDatesPayload BookingDates { get; private set; }
+        public string AdditionalNeeds { get; private set; }
 
-        public void setFirstname(string firstname)
+        public void SetFirstname(string firstname)
         {
-            this.firstname = firstname;
+            Firstname = firstname;
         }
 
-        public void setLastname(string lastname)
+        public void SetLastname(string lastname)
         {
-            this.lastname = lastname;
+            Lastname = lastname;
         }
 
-        public void setTotalprice(int totalprice)
+        public void SetTotalPrice(int totalprice)
         {
-            this.totalprice = totalprice;
+            TotalPrice = totalprice;
         }
 
-        public void setDepositpaid(bool depositpaid)
+        public void SetDepositPaid(bool depositpaid)
         {
-            this.depositpaid = depositpaid;
+            DepositPaid = depositpaid;
         }
 
-        public void setBookingdates(BookingDatesPayload bookingdates)
+        public void SetBookingDates(BookingDatesPayload bookingdates)
         {
-            this.bookingdates = bookingdates;
+            BookingDates = bookingdates;
         }
 
-        public void setAdditionalneeds(string additionalneeds)
+        public void SetAdditionalNeeds(string additionalneeds)
         {
-            this.additionalneeds = additionalneeds;
+            AdditionalNeeds = additionalneeds;
         }
 
         private BookingPayload(string firstname, string lastname, int totalprice, bool depositpaid, BookingDatesPayload bookingdates, string additionalneeds)
         {
-            this.firstname = firstname;
-            this.lastname = lastname;
-            this.totalprice = totalprice;
-            this.depositpaid = depositpaid;
-            this.bookingdates = bookingdates;
-            this.additionalneeds = additionalneeds;
+            Firstname = firstname;
+            Lastname = lastname;
+            TotalPrice = totalprice;
+            DepositPaid = depositpaid;
+            BookingDates = bookingdates;
+            AdditionalNeeds = additionalneeds;
         }
 
         public BookingPayload()
         {
         }
 
-        //public BookingPayload build()
-        //{
-        //    BookingDatesPayload bookingDates = new BookingDatesPayload(checkin, checkout);
-        //    return new BookingPayload(firstname, lastname, totalprice, depositpaid, bookingDates, additionalneeds);
-        //}
     }
-   }
+}

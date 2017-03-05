@@ -76,7 +76,7 @@ namespace Tests
 
             AuthResponsePayload authResponse = Auth.PostAuth(authPayload);
 
-            var deleteResponse = Booking.DeleteBooking(bookingResponse.BookingId, authResponse.Token);
+            var deleteResponse = Booking.DeleteBooking(bookingResponse.bookingid, authResponse.token);
 
             Assert.IsTrue(deleteResponse.StatusCode == HttpStatusCode.Created, "Http Status Code is not 201");
         }

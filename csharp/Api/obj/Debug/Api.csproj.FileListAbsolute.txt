@@ -1,9 +1,0 @@
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\bin\Debug\Api.dll
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\bin\Debug\Api.pdb
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\bin\Debug\Newtonsoft.Json.dll
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\bin\Debug\Payloads.dll
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\bin\Debug\Payloads.pdb
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\bin\Debug\Newtonsoft.Json.xml
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\obj\Debug\Api.csprojResolveAssemblyReference.cache
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\obj\Debug\Api.dll
-C:\Users\hrobb\Source\Repos\api-framework\csharp\Api\obj\Debug\Api.pdb

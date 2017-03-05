@@ -2,17 +2,17 @@
 {
     public class BookingResponsePayload
     {
-        public int BookingId { get; private set; }
-        public BookingPayload Booking { get; private set; }
+        public int bookingid { get; set; }
+        public BookingPayload booking { get; set; }
 
         public void SetBookingiId(int bookingid)
         {
-            BookingId = bookingid;
+            this.bookingid = bookingid;
         }
 
         public void SetBooking(BookingPayload booking)
         {
-            Booking = booking;
+            this.booking = booking;
         }
     }
 }

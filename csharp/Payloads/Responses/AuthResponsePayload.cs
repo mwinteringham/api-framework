@@ -1,4 +1,4 @@
-﻿namespace Payloads
+﻿namespace Payloads.Responses
 {
     public class AuthResponsePayload
     {

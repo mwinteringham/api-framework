@@ -1,4 +1,4 @@
-﻿namespace Payloads
+﻿namespace Payloads.Requests
 {
     public class BookingPayload
     {

@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthPayload.cs" />
-    <Compile Include="AuthResponsePayload.cs" />
-    <Compile Include="BookingDatesPayload.cs" />
-    <Compile Include="BookingPayload.cs" />
-    <Compile Include="BookingResponsePayload.cs" />
+    <Compile Include="Requests\AuthPayload.cs" />
+    <Compile Include="Responses\AuthResponsePayload.cs" />
+    <Compile Include="Requests\BookingDatesPayload.cs" />
+    <Compile Include="Requests\BookingPayload.cs" />
+    <Compile Include="Responses\BookingResponsePayload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

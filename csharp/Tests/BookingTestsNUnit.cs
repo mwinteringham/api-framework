@@ -2,10 +2,11 @@
 using Api;
 using System.Net.Http.Headers;
 using System.Net;
-using Payloads;
 using Newtonsoft.Json;
 using System.Web;
 using NUnit.Framework;
+using Payloads.Responses;
+using Payloads.Requests;
 
 namespace Tests
 {

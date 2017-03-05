@@ -1,4 +1,6 @@
-﻿namespace Payloads
+﻿using Payloads.Requests;
+
+namespace Payloads.Responses
 {
     public class BookingResponsePayload
     {

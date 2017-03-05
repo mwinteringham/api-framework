@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Payloads
+namespace Payloads.Requests
 {
     public class BookingDatesPayload
     {

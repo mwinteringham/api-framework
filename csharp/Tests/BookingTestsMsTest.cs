@@ -3,9 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Api;
 using System.Net.Http.Headers;
 using System.Net;
-using Payloads;
 using Newtonsoft.Json;
 using System.Web;
+using Payloads.Requests;
+using Payloads.Responses;
 
 namespace Tests
 {

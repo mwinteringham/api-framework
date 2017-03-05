@@ -1,8 +1,9 @@
-﻿using Payloads;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
+using Payloads.Responses;
+using Payloads.Requests;
 
 namespace Api
 {

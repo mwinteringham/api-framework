@@ -5,9 +5,11 @@
 node_modules
 *.iml
 target
-/csharp/Api/bin/Debug
-/csharp/Payloads/bin/Debug
-/csharp/Payloads/obj/Debug
-/csharp/Tests/bin/Debug
-/csharp/Api/obj/Debug
-/csharp/Tests/obj/Debug
+/csharp/.vs
+/csharp/Api/bin
+/csharp/Api/obj
+/csharp/Payloads/bin
+/csharp/Payloads/obj
+/csharp/Tests/bin
+/csharp/Tests/obj
+/csharp/TestResults

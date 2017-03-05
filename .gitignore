@@ -9,3 +9,5 @@ target
 /csharp/Payloads/bin/Debug
 /csharp/Payloads/obj/Debug
 /csharp/Tests/bin/Debug
+/csharp/Api/obj/Debug
+/csharp/Tests/obj/Debug

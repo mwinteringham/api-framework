@@ -13,3 +13,4 @@ target
 /csharp/Tests/bin
 /csharp/Tests/obj
 /csharp/TestResults
+/csharp/packages

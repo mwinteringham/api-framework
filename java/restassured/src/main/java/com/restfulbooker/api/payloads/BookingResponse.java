@@ -9,14 +9,6 @@ public class BookingResponse {
     @JsonProperty
     private Booking booking;
 
-    public void setBookingid(int bookingid) {
-        this.bookingid = bookingid;
-    }
-
-    public void setBooking(Booking booking) {
-        this.booking = booking;
-    }
-
     public int getBookingid() {
         return bookingid;
     }

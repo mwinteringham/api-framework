@@ -57,54 +57,47 @@ public class Booking {
         this.additionalneeds = additionalneeds;
     }
 
-    public static class BookingBuilder {
+    public static class Builder {
 
         private String firstname;
         private String lastname;
         private int totalprice;
         private boolean depositpaid;
-        private Date checkin;
-        private Date checkout;
+        private BookingDates bookingdates;
         private String additionalneeds;
 
-        public BookingBuilder setFirstname(String firstname) {
+        public Builder setFirstname(String firstname) {
             this.firstname = firstname;
             return this;
         }
 
-        public BookingBuilder setLastname(String lastname) {
+        public Builder setLastname(String lastname) {
             this.lastname = lastname;
             return this;
         }
 
-        public BookingBuilder setTotalprice(int totalprice) {
+        public Builder setTotalprice(int totalprice) {
             this.totalprice = totalprice;
             return this;
         }
 
-        public BookingBuilder setDepositpaid(boolean depositpaid) {
+        public Builder setDepositpaid(boolean depositpaid) {
             this.depositpaid = depositpaid;
             return this;
         }
 
-        public BookingBuilder setCheckin(Date checkin) {
-            this.checkin = checkin;
+        public Builder setBookingdates(BookingDates bookingdates) {
+            this.bookingdates = bookingdates;
             return this;
         }
 
-        public BookingBuilder setCheckout(Date checkout) {
-            this.checkout = checkout;
-            return this;
-        }
-
-        public BookingBuilder setAdditionalneeds(String additionalneeds) {
+        public Builder setAdditionalneeds(String additionalneeds) {
             this.additionalneeds = additionalneeds;
             return this;
         }
 
         public Booking build(){
-            BookingDates bookingDates = new BookingDates(checkin, checkout);
-            return new Booking(firstname, lastname, totalprice, depositpaid, bookingDates, additionalneeds);
+            return new Booking(firstname, lastname, totalprice, depositpaid, bookingdates, additionalneeds);
         }
     }
 }

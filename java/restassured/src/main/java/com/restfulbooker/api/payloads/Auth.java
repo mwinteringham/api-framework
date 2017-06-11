@@ -1,6 +1,6 @@
 package com.restfulbooker.api.payloads;
 
-        import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Auth {
 
@@ -8,11 +8,6 @@ public class Auth {
     private String username;
     @JsonProperty
     private String password;
-
-    private Auth(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
 
     public String getUsername() {
         return username;
@@ -22,17 +17,22 @@ public class Auth {
         return password;
     }
 
-    public static class AuthBuilder {
+    private Auth(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public static class Builder {
 
         private String username;
         private String password;
 
-        public AuthBuilder setUsername(String username) {
+        public Builder setUsername(String username) {
             this.username = username;
             return this;
         }
 
-        public AuthBuilder setPassword(String password) {
+        public Builder setPassword(String password) {
             this.password = password;
             return this;
         }

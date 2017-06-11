@@ -2,10 +2,7 @@ package com.restfulbooker.api;
 
 import com.restfulbooker.api.api.AuthApi;
 import com.restfulbooker.api.api.BookingApi;
-import com.restfulbooker.api.payloads.Auth;
-import com.restfulbooker.api.payloads.Booking;
-import com.restfulbooker.api.payloads.AuthResponse;
-import com.restfulbooker.api.payloads.BookingResponse;
+import com.restfulbooker.api.payloads.*;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -39,13 +36,16 @@ public class ApiTest {
 
     @Test
     public void postBookingReturns200(){
-        Booking payload = new Booking.BookingBuilder()
+        BookingDates dates = new BookingDates.Builder()
+                .setCheckin(new Date())
+                .setCheckout(new Date())
+                .build();
+        Booking payload = new Booking.Builder()
                 .setFirstname("Mary")
                 .setLastname("White")
                 .setTotalprice(200)
                 .setDepositpaid(true)
-                .setCheckin(new Date())
-                .setCheckout(new Date())
+                .setBookingdates(dates)
                 .setAdditionalneeds("None")
                 .build();
 
@@ -56,19 +56,22 @@ public class ApiTest {
 
     @Test
     public void deleteBookingReturns201(){
-        Booking payload = new Booking.BookingBuilder()
+        BookingDates dates = new BookingDates.Builder()
+                .setCheckin(new Date())
+                .setCheckout(new Date())
+                .build();
+        Booking payload = new Booking.Builder()
                 .setFirstname("Mary")
                 .setLastname("White")
                 .setTotalprice(200)
                 .setDepositpaid(true)
-                .setCheckin(new Date())
-                .setCheckout(new Date())
+                .setBookingdates(dates)
                 .setAdditionalneeds("None")
                 .build();
 
         BookingResponse createdBookingResponse = BookingApi.postBooking(payload).as(BookingResponse.class);
 
-        Auth auth = new Auth.AuthBuilder()
+        Auth auth = new Auth.Builder()
                 .setUsername("admin")
                 .setPassword("password123")
                 .build();

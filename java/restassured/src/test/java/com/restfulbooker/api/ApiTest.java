@@ -1,7 +1,7 @@
 package com.restfulbooker.api;
 
-import com.restfulbooker.api.api.Auth;
-import com.restfulbooker.api.api.Booking;
+import com.restfulbooker.api.api.AuthApi;
+import com.restfulbooker.api.api.BookingApi;
 import com.restfulbooker.api.payloads.request.AuthPayload;
 import com.restfulbooker.api.payloads.request.BookingPayload;
 import com.restfulbooker.api.payloads.response.AuthResponse;
@@ -18,21 +18,21 @@ public class ApiTest {
 
     @Test
     public void getBookingShouldReturn200(){
-        Response response = Booking.getBookings();
+        Response response = BookingApi.getBookings();
 
         assertThat(response.getStatusCode(), is(200));
     }
 
     @Test
     public void getBookingIdShouldReturn200(){
-        Response response = Booking.getBooking(1, "application/json");
+        Response response = BookingApi.getBooking(1, "application/json");
 
         assertThat(response.getStatusCode(), is(200));
     }
 
     @Test
     public void getBookingIdWithBadAcceptShouldReturn418(){
-        Response response = Booking.getBooking(1, "text/plain");
+        Response response = BookingApi.getBooking(1, "text/plain");
 
         assertThat(response.getStatusCode(), is(418));
     }
@@ -49,7 +49,7 @@ public class ApiTest {
                 .setAdditionalneeds("None")
                 .build();
 
-        Response response = Booking.postBooking(payload);
+        Response response = BookingApi.postBooking(payload);
 
         assertThat(response.getStatusCode(), is(200));
     }
@@ -66,16 +66,16 @@ public class ApiTest {
                 .setAdditionalneeds("None")
                 .build();
 
-        BookingResponse createdBookingResponse = Booking.postBooking(payload).as(BookingResponse.class);
+        BookingResponse createdBookingResponse = BookingApi.postBooking(payload).as(BookingResponse.class);
 
         AuthPayload authPayload = new AuthPayload.AuthPayloadBuilder()
                 .setUsername("admin")
                 .setPassword("password123")
                 .build();
 
-        AuthResponse authResponse = Auth.postAuth(authPayload).as(AuthResponse.class);
+        AuthResponse authResponse = AuthApi.postAuth(authPayload).as(AuthResponse.class);
 
-        Response deleteResponse = Booking.deleteBooking(
+        Response deleteResponse = BookingApi.deleteBooking(
                 createdBookingResponse.getBookingid(),
                 authResponse.getToken());
 

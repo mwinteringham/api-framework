@@ -1,6 +1,6 @@
 package com.restfulbooker.api.api;
 
-import com.restfulbooker.api.payloads.request.BookingPayload;
+import com.restfulbooker.api.payloads.Booking;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
@@ -21,7 +21,7 @@ public class BookingApi extends BaseApi {
                 .get(apiUrl + Integer.toString(id));
     }
 
-    public static Response postBooking(BookingPayload payload) {
+    public static Response postBooking(Booking payload) {
         return given()
                 .contentType(ContentType.JSON)
                 .body(payload)

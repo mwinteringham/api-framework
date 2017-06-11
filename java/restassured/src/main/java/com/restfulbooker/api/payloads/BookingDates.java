@@ -1,17 +1,22 @@
-package com.restfulbooker.api.payloads.request;
+package com.restfulbooker.api.payloads;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.Date;
 
-public class BookingDatesPayload {
+public class BookingDates {
 
     @JsonProperty
     private Date checkin;
     @JsonProperty
     private Date checkout;
 
-    public BookingDatesPayload(Date checkin, Date checkout){
+    // default constructor required by Jackson
+    private BookingDates() {
+        // nothing here
+    }
+
+    public BookingDates(Date checkin, Date checkout){
         this.checkin = checkin;
         this.checkout = checkout;
     }

@@ -1,21 +1,19 @@
-package com.restfulbooker.api.payloads.response;
+package com.restfulbooker.api.payloads;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingResponse {
 
     @JsonProperty
     private int bookingid;
     @JsonProperty
-    private BookingDetails booking;
+    private Booking booking;
 
     public void setBookingid(int bookingid) {
         this.bookingid = bookingid;
     }
 
-    public void setBooking(BookingDetails booking) {
+    public void setBooking(Booking booking) {
         this.booking = booking;
     }
 
@@ -23,7 +21,7 @@ public class BookingResponse {
         return bookingid;
     }
 
-    public BookingDetails getBooking() {
+    public Booking getBooking() {
         return booking;
     }
 }

@@ -2,10 +2,10 @@ package com.restfulbooker.api;
 
 import com.restfulbooker.api.api.AuthApi;
 import com.restfulbooker.api.api.BookingApi;
-import com.restfulbooker.api.payloads.request.AuthPayload;
-import com.restfulbooker.api.payloads.request.BookingPayload;
-import com.restfulbooker.api.payloads.response.AuthResponse;
-import com.restfulbooker.api.payloads.response.BookingResponse;
+import com.restfulbooker.api.payloads.Auth;
+import com.restfulbooker.api.payloads.Booking;
+import com.restfulbooker.api.payloads.AuthResponse;
+import com.restfulbooker.api.payloads.BookingResponse;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -39,7 +39,7 @@ public class ApiTest {
 
     @Test
     public void postBookingReturns200(){
-        BookingPayload payload = new BookingPayload.BookingPayloadBuilder()
+        Booking payload = new Booking.BookingBuilder()
                 .setFirstname("Mary")
                 .setLastname("White")
                 .setTotalprice(200)
@@ -56,7 +56,7 @@ public class ApiTest {
 
     @Test
     public void deleteBookingReturns201(){
-        BookingPayload payload = new BookingPayload.BookingPayloadBuilder()
+        Booking payload = new Booking.BookingBuilder()
                 .setFirstname("Mary")
                 .setLastname("White")
                 .setTotalprice(200)
@@ -68,12 +68,12 @@ public class ApiTest {
 
         BookingResponse createdBookingResponse = BookingApi.postBooking(payload).as(BookingResponse.class);
 
-        AuthPayload authPayload = new AuthPayload.AuthPayloadBuilder()
+        Auth auth = new Auth.AuthBuilder()
                 .setUsername("admin")
                 .setPassword("password123")
                 .build();
 
-        AuthResponse authResponse = AuthApi.postAuth(authPayload).as(AuthResponse.class);
+        AuthResponse authResponse = AuthApi.postAuth(auth).as(AuthResponse.class);
 
         Response deleteResponse = BookingApi.deleteBooking(
                 createdBookingResponse.getBookingid(),

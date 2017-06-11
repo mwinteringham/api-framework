@@ -1,9 +1,7 @@
-package com.restfulbooker.api.payloads.response;
+package com.restfulbooker.api.payloads;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class AuthResponse {
 
     @JsonProperty

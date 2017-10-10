@@ -16,7 +16,7 @@ namespace Api
             try
             {              
                 string requestBody = JsonConvert.SerializeObject(payload);
-                using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri("http://localhost:3001/auth"), Method = HttpMethod.Post })
+                using (HttpRequestMessage request = new HttpRequestMessage { RequestUri = new Uri("https://restful-booker.herokuapp.com/auth"), Method = HttpMethod.Post })
                 {
                     request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
                     var response = _httpClient.SendAsync(request).Result;

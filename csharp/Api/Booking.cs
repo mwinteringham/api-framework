@@ -11,7 +11,7 @@ namespace Api
 {
     public class Booking
     {
-        private static string _baseUrl = "http://localhost:3001";
+        private static string _baseUrl = "https://restful-booker.herokuapp.com";
 
         public static HttpResponseMessage GetBookings()
         {

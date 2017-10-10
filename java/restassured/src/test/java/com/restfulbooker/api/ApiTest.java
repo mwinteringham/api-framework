@@ -40,6 +40,7 @@ public class ApiTest {
                 .setCheckin(new Date())
                 .setCheckout(new Date())
                 .build();
+
         Booking payload = new Booking.Builder()
                 .setFirstname("Mary")
                 .setLastname("White")
@@ -60,6 +61,7 @@ public class ApiTest {
                 .setCheckin(new Date())
                 .setCheckout(new Date())
                 .build();
+
         Booking payload = new Booking.Builder()
                 .setFirstname("Mary")
                 .setLastname("White")

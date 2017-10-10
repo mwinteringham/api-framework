@@ -12,6 +12,6 @@ The framework contains three areas:
 
 ## Setup
 
-Each framework has been setup using their respective package manager and there is an assumption you know how to use it.  Simple use the package manager in each to pull down dependencies to get running.
+Each framework has been setup using their respective package manager and there is an assumption you know how to use it.  Simply use the package manager in each to pull down dependencies to get running.
 
-All frameworks have been designed to run tests against [https://github.com/mwinteringham/restful-booker](https://github.com/mwinteringham/restful-booker) so to run the tests you will need to have an instance of [restful-booker](https://github.com/mwinteringham/restful-booker) running locally.
+All frameworks have been designed to run tests against [https://restful-booker.herokuapp.com/](https://restful-booker.herokuapp.com/). If you would like to play with the code locally you can find it here: [https://github.com/mwinteringham/restful-booker](https://github.com/mwinteringham/restful-booker) 

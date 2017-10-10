@@ -11,7 +11,7 @@ import java.util.Collections;
 public class Booking {
 
     private static RestTemplate restTemplate = new RestTemplate();
-    private static String baseUrl = "http://localhost:3001";
+    private static String baseUrl = "https://restful-booker.herokuapp.com";
 
     public static ResponseEntity<String> getBookings(){
         return restTemplate.getForEntity(baseUrl + "/booking", String.class);

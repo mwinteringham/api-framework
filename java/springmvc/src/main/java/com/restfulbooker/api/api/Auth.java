@@ -15,6 +15,6 @@ public class Auth {
 
         HttpEntity<AuthPayload> httpEntity = new HttpEntity<AuthPayload>(payload, requestHeaders);
 
-        return restTemplate.exchange("http://localhost:3001/auth", HttpMethod.POST, httpEntity, AuthResponse.class);
+        return restTemplate.exchange("https://restful-booker.herokuapp.com/auth", HttpMethod.POST, httpEntity, AuthResponse.class);
     }
 }

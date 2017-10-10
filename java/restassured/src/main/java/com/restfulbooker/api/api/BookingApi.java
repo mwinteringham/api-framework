@@ -1,35 +1,37 @@
 package com.restfulbooker.api.api;
 
-import com.restfulbooker.api.payloads.request.BookingPayload;
+import com.restfulbooker.api.payloads.Booking;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class Booking {
+public class BookingApi extends BaseApi {
 
-    private static String baseUrl = "http://localhost:3001";
+    private static final String apiUrl = baseUrl + "booking/";
 
     public static Response getBookings(){
-        return given().get(baseUrl + "/booking");
+        return given().get(apiUrl);
 
     }
 
     public static Response getBooking(int id, String mediaType) {
-        return given().header("Accept", mediaType).get(baseUrl + "/booking/" + Integer.toString(id));
+        return given()
+                .header("Accept", mediaType)
+                .get(apiUrl + Integer.toString(id));
     }
 
-    public static Response postBooking(BookingPayload payload) {
+    public static Response postBooking(Booking payload) {
         return given()
                 .contentType(ContentType.JSON)
                 .body(payload)
                 .when()
-                .post(baseUrl + "/booking");
+                .post(apiUrl);
     }
 
     public static Response deleteBooking(int id, String tokenValue) {
         return given()
                 .header("Cookie", "token=" + tokenValue)
-                .delete(baseUrl + "/booking/" + Integer.toString(id));
+                .delete(apiUrl + Integer.toString(id));
     }
 }

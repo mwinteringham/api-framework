@@ -1,10 +1,10 @@
-package com.restfulbooker.api.payloads.request;
+package com.restfulbooker.api.payloads;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.Date;
 
-public class BookingPayload {
+public class Booking {
 
     @JsonProperty
     private String firstname;
@@ -15,7 +15,7 @@ public class BookingPayload {
     @JsonProperty
     private boolean depositpaid;
     @JsonProperty
-    private BookingDatesPayload bookingdates;
+    private BookingDates bookingdates;
     @JsonProperty
     private String additionalneeds;
 
@@ -35,7 +35,7 @@ public class BookingPayload {
         return depositpaid;
     }
 
-    public BookingDatesPayload getBookingdates() {
+    public BookingDates getBookingdates() {
         return bookingdates;
     }
 
@@ -43,7 +43,12 @@ public class BookingPayload {
         return additionalneeds;
     }
 
-    private BookingPayload(String firstname, String lastname, int totalprice, boolean depositpaid, BookingDatesPayload bookingdates, String additionalneeds) {
+    // default constructor required by Jackson
+    private Booking() {
+        // nothing here
+    }
+
+    private Booking(String firstname, String lastname, int totalprice, boolean depositpaid, BookingDates bookingdates, String additionalneeds) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.totalprice = totalprice;
@@ -52,54 +57,47 @@ public class BookingPayload {
         this.additionalneeds = additionalneeds;
     }
 
-    public static class BookingPayloadBuilder {
+    public static class Builder {
 
         private String firstname;
         private String lastname;
         private int totalprice;
         private boolean depositpaid;
-        private Date checkin;
-        private Date checkout;
+        private BookingDates bookingdates;
         private String additionalneeds;
 
-        public BookingPayloadBuilder setFirstname(String firstname) {
+        public Builder setFirstname(String firstname) {
             this.firstname = firstname;
             return this;
         }
 
-        public BookingPayloadBuilder setLastname(String lastname) {
+        public Builder setLastname(String lastname) {
             this.lastname = lastname;
             return this;
         }
 
-        public BookingPayloadBuilder setTotalprice(int totalprice) {
+        public Builder setTotalprice(int totalprice) {
             this.totalprice = totalprice;
             return this;
         }
 
-        public BookingPayloadBuilder setDepositpaid(boolean depositpaid) {
+        public Builder setDepositpaid(boolean depositpaid) {
             this.depositpaid = depositpaid;
             return this;
         }
 
-        public BookingPayloadBuilder setCheckin(Date checkin) {
-            this.checkin = checkin;
+        public Builder setBookingdates(BookingDates bookingdates) {
+            this.bookingdates = bookingdates;
             return this;
         }
 
-        public BookingPayloadBuilder setCheckout(Date checkout) {
-            this.checkout = checkout;
-            return this;
-        }
-
-        public BookingPayloadBuilder setAdditionalneeds(String additionalneeds) {
+        public Builder setAdditionalneeds(String additionalneeds) {
             this.additionalneeds = additionalneeds;
             return this;
         }
 
-        public BookingPayload build(){
-            BookingDatesPayload bookingDates = new BookingDatesPayload(checkin, checkout);
-            return new BookingPayload(firstname, lastname, totalprice, depositpaid, bookingDates, additionalneeds);
+        public Booking build(){
+            return new Booking(firstname, lastname, totalprice, depositpaid, bookingdates, additionalneeds);
         }
     }
 }

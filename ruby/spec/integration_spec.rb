@@ -34,7 +34,7 @@ describe('Restful-booker') do
       self.additionalneeds = 'Breakfast'
     end
 
-    response = Booking.create_booking(payload.toJson, :json)
+    response = Booking.create_booking(payload.to_json, :json)
 
     expect(response.code).to be(200)
   end
@@ -50,14 +50,14 @@ describe('Restful-booker') do
       self.additionalneeds = 'Breakfast'
     end
 
-    created_response = Booking.create_booking(payload.toJson, :json)
+    created_response = Booking.create_booking(payload.to_json, :json)
 
     auth_payload = AuthorisePayload.new do
       self.username = "admin"
       self.password = "password123"
     end
 
-    auth_response = Authorise.post_credentials(auth_payload.toJson)
+    auth_response = Authorise.post_credentials(auth_payload.to_json)
 
     delete_response = Booking.delete_booking(JSON.parse(created_response.body)["bookingid"].to_i, JSON.parse(auth_response.body)["token"])
 

@@ -6,11 +6,9 @@ class AuthorisePayload
     instance_eval &block if block_given?
   end
 
-  def toJson
-    return "{
-        \"username\": \"#{username}\",
-        \"password\": \"#{password}\"
-    }"
+  def to_json
+    {username: username,
+     password: password}.to_json
   end
 
 end

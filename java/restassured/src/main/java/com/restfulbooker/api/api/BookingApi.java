@@ -12,7 +12,6 @@ public class BookingApi extends BaseApi {
 
     public static Response getBookings(){
         return given().get(apiUrl);
-
     }
 
     public static Response getBooking(int id, String mediaType) {

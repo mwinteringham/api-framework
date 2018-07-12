@@ -4,6 +4,7 @@ import com.restfulbooker.api.api.AuthApi;
 import com.restfulbooker.api.api.BookingApi;
 import com.restfulbooker.api.payloads.*;
 import io.restassured.response.Response;
+import org.approvaltests.Approvals;
 import org.junit.Test;
 
 import java.util.Date;
@@ -17,21 +18,21 @@ public class ApiTest {
     public void getBookingShouldReturn200(){
         Response response = BookingApi.getBookings();
 
-        assertThat(response.getStatusCode(), is(200));
+        Approvals.verify(response.getStatusCode());
     }
 
     @Test
     public void getBookingIdShouldReturn200(){
         Response response = BookingApi.getBooking(1, "application/json");
 
-        assertThat(response.getStatusCode(), is(200));
+        Approvals.verify(response.getStatusCode());
     }
 
     @Test
     public void getBookingIdWithBadAcceptShouldReturn418(){
         Response response = BookingApi.getBooking(1, "text/plain");
 
-        assertThat(response.getStatusCode(), is(418));
+        Approvals.verify(response.getStatusCode());
     }
 
     @Test
@@ -52,7 +53,7 @@ public class ApiTest {
 
         Response response = BookingApi.postBooking(payload);
 
-        assertThat(response.getStatusCode(), is(200));
+        Approvals.verify(response.getStatusCode());
     }
 
     @Test
@@ -84,7 +85,7 @@ public class ApiTest {
                 createdBookingResponse.getBookingid(),
                 authResponse.getToken());
 
-        assertThat(deleteResponse.getStatusCode(), is(201));
+        Approvals.verify(deleteResponse.getStatusCode());
     }
 
 }

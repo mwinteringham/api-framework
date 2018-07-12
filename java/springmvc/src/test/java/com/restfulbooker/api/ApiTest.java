@@ -6,6 +6,7 @@ import com.restfulbooker.api.payloads.request.AuthPayload;
 import com.restfulbooker.api.payloads.request.BookingPayload;
 import com.restfulbooker.api.payloads.response.AuthResponse;
 import com.restfulbooker.api.payloads.response.BookingResponse;
+import org.approvaltests.Approvals;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,14 +24,14 @@ public class ApiTest {
     public void getBookingShouldReturn200(){
         ResponseEntity<String> response = Booking.getBookings();
 
-        assertThat(response.getStatusCode(), is(HttpStatus.OK));
+        Approvals.verify(response.getStatusCode());
     }
 
     @Test
     public void getBookingIdShouldReturn200(){
         ResponseEntity<String> response = Booking.getBooking(1, MediaType.APPLICATION_JSON);
 
-        assertThat(response.getStatusCode(), is(HttpStatus.OK));
+        Approvals.verify(response.getStatusCode());
     }
 
     @Test
@@ -40,7 +41,7 @@ public class ApiTest {
 
             fail("HttpClientError not thrown");
         } catch (HttpClientErrorException e){
-            assertThat(e.getStatusCode(), is(HttpStatus.I_AM_A_TEAPOT));
+            Approvals.verify(e.getStatusCode());
         }
     }
 
@@ -58,7 +59,7 @@ public class ApiTest {
 
         ResponseEntity<BookingResponse> response = Booking.postBooking(payload);
 
-        assertThat(response.getStatusCode(), is(HttpStatus.OK));
+        Approvals.verify(response.getStatusCode());
     }
 
     @Test
@@ -86,7 +87,7 @@ public class ApiTest {
                 createdBookingResponse.getBody().getBookingid(),
                 authResponse.getBody().getToken());
 
-        assertThat(deleteResponse.getStatusCode(), is(HttpStatus.CREATED));
+        Approvals.verify(deleteResponse.getStatusCode());
     }
 
 }

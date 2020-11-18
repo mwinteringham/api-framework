@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/Rosalita/api-framework/go/api"
-	"github.com/Rosalita/api-framework/go/payloads"
+	"github.com/mwinteringham/api-framework/go/api"
+	"github.com/mwinteringham/api-framework/go/payloads"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -6,14 +6,13 @@ import (
 	"flag"
 	"fmt"
 
-	//	"log"
 	"net/http"
 	"os"
 	"testing"
 	"time"
 
-	"github.com/Rosalita/api-framework/go/api"
-	"github.com/Rosalita/api-framework/go/payloads"
+	"github.com/mwinteringham/api-framework/go/api"
+	"github.com/mwinteringham/api-framework/go/payloads"
 )
 
 func TestMain(m *testing.M) {

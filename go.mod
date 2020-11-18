@@ -1,4 +1,4 @@
-module github.com/Rosalita/api-framework
+module github.com/mwinteringham/api-framework
 
 go 1.15
 

@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/Rosalita/api-framework/go/payloads"
+	"github.com/mwinteringham/api-framework/go/payloads"
 )
 
 var baseURL = "https://restful-booker.herokuapp.com"

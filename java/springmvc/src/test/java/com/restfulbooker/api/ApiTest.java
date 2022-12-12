@@ -7,16 +7,14 @@ import com.restfulbooker.api.payloads.request.BookingPayload;
 import com.restfulbooker.api.payloads.response.AuthResponse;
 import com.restfulbooker.api.payloads.response.BookingResponse;
 import org.approvaltests.Approvals;
-import org.junit.Test;
-import org.springframework.http.HttpStatus;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.Date;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class ApiTest {
 

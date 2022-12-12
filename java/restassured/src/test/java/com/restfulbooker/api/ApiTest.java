@@ -5,12 +5,9 @@ import com.restfulbooker.api.api.BookingApi;
 import com.restfulbooker.api.payloads.*;
 import io.restassured.response.Response;
 import org.approvaltests.Approvals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Date;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 
 public class ApiTest {
 
